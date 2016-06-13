@@ -1,0 +1,15 @@
+---
+# base_linux: Tasks entry point. Called by main.yml 
+ - name: install base packages
+   yum: >
+     name={{ items }}
+     state=latest
+     update_cache=yes
+   with_items:
+     - vim
+     - mc
+     - tmux
+     - wget
+     - less
+     - nfs-utils
+     - python-setuptools

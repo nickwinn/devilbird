@@ -1,2 +1,7 @@
 ---
 # apache2: Tasks entry point. Called by main.yml 
+ - name: install apache
+   yum: >
+      name=httpd
+      state=latest
+      update_cache=yes

@@ -1,0 +1,16 @@
+- name: example playbook
+  hosts: test
+  gather_facts: yes
+  user: root
+
+  pre_tasks:
+   - name: install packages
+     yum: >
+        name={{ item }}
+        state=present
+        update_cache=yes
+     with_items:
+       - vim
+
+  roles:
+   - role: apache2

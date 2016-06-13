@@ -242,7 +242,3 @@ galaxy_info:
 EOF
 
 echo "${ROLE_NAME} skeleton created at ${ROLE_BASE}"
-let "length = $(echo "${ROLE_BASE}meta/main.yml" |  wc -m) + 3"
-msg="$(echo -ne "Please update: \n\n${ROLE_BASE}README.md\n  AND fill out \n\n${ROLE_BASE}meta/main.yml\n\n  with:\n  - dependencies (required!)\n - supported platforms (required!)\n - version (required!)\n - categories (optional unless publishing to Ansible Galaxy)" )"
-[ -x "$(which cowsay)" ] && cowsay -W $length "$msg" || echo "$msg"
-

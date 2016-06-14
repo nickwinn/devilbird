@@ -5,7 +5,7 @@
 
   pre_tasks:
    - name: install packages
-     yum: >
+     yum: 
         name={{ item }}
         state=present
         update_cache=yes

@@ -1,8 +1,8 @@
 ---
 # base_linux: Tasks entry point. Called by main.yml 
  - name: install base packages
-   yum: >
-     name={{ items }}
+   yum: 
+     name={{ item }}
      state=latest
      update_cache=yes
    with_items:

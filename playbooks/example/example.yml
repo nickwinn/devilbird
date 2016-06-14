@@ -1,5 +1,5 @@
 - name: example playbook
-  hosts: test
+  hosts: docker 
   gather_facts: yes
   user: root
 
@@ -11,6 +11,12 @@
         update_cache=yes
      with_items:
        - vim
+       - mc
+       - net-tools
+       - less
+       - tmux
 
   roles:
    - role: apache2
+   - role: docker
+   - role: base_linux

@@ -1,0 +1,16 @@
+---
+# docker: Tasks entry point. Called by main.yml 
+- name: add docker repo
+  yum_repository:
+    name: docker
+    description: docker repo
+    file: docker
+    baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
+    enabled: yes
+    state: present
+
+- name: install docker engine
+  yum:
+    name="docker-engine"
+    state=present
+    disable_gpg_check=yes

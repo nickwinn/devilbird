@@ -1,14 +1,14 @@
 ---
 # users: Tasks entry point. Called by main.yml 
 
-- name: Add {{ ansible_client_user }} user
+- name: add {{ ansible_client_user }} user
   user: >
         name={{ ansible_client_user }}
         uid={{users[ansible_client_user]['uid']}}
         home={{users[ansible_client_user]['home']}}
         state=present
 
-- name: Make sure {{ ansible_client_user }} has sudo access
+- name: make sure {{ ansible_client_user }} has sudo access
   lineinfile: >
               dest=/etc/sudoers
               validate='/usr/sbin/visudo -cf %s'
@@ -16,7 +16,7 @@
               line="{{ ansible_client_user }} ALL=(ALL)      NOPASSWD: ALL"
               state=present
 
-- name: Install {{ ansible_client_user }} public key
+- name: install {{ ansible_client_user }} public key
   authorized_key: >
                   user={{ ansible_client_user }}
                   key="{{ item }}"

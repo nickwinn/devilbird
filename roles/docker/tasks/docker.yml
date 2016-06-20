@@ -5,9 +5,10 @@
     name: docker
     description: docker repo
     file: docker
-    baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
+    baseurl: https://yum.dockerproject.org/repo/testing/centos/$releasever/
     enabled: yes
     state: present
+    gpgcheck: no
 
 - name: install docker engine
   yum:

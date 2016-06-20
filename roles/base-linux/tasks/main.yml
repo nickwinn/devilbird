@@ -1,5 +1,5 @@
 ---
-# base_linux: entry point for tasks
+# base-linux: entry point for tasks
 #                 Generally only include other file(s) and add tags here.
 
-- include: base_linux.yml tags=base_linux
+- include: base-linux.yml tags=base-linux

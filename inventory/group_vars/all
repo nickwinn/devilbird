@@ -1,0 +1,31 @@
+---
+
+dns_nameservers:
+  - 10.100.0.212
+  - 4.2.2.1
+  - 8.8.8.8
+
+dns_search:
+  - twistedliving.com
+
+resolv_options:
+  - timeout:3
+  - attempts:3
+
+ntpservers:
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+
+ansible_client_user: root 
+ansible_client_group: root
+
+users:
+    cfm:
+        uid: 1000
+        group: cfm 
+        home: /usr/local/cfm
+        shell: /bin/bash
+groups:
+    cfm:
+        gid: 1000

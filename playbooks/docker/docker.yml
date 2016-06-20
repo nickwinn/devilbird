@@ -1,0 +1,11 @@
+- name: docker playbook
+  hosts: docker
+  gather_facts: yes
+  user: root
+  vars:
+  pre_tasks:
+
+  roles:
+   - role: dns
+   - role: base-linux
+   - role: docker

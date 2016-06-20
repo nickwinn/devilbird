@@ -13,3 +13,9 @@
      - less
      - nfs-utils
      - python-setuptools
+
+ - name: update all packages
+   yum:
+     name=*
+     state=latest
+     update_cache=yes

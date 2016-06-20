@@ -1,8 +1,8 @@
 ---
-# base_linux: entry point for meta
+# bootstrap: entry point for meta
 galaxy_info:
   author: YOUR NAME HERE
-  description: Installs base_linux
+  description: Installs bootstrap
   company: ReturnPath
   license: MIT
   min_ansible_version: 1.2

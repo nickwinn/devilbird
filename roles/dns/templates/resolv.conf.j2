@@ -1,0 +1,9 @@
+# Ansible manages this file.
+search {{ dns_search|join(' ') }}
+{% for nameserver in dns_nameservers %}
+nameserver {{ nameserver }}
+{% endfor %}
+{% for option in resolv_options %}
+options {{ option }}
+{% endfor %}
+

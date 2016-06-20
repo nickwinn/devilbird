@@ -12,17 +12,11 @@
 ###    user: cfm
 ###    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 ###
-- name: Add {{ ansible_client_group }} group
-  group: >
-         name={{ ansible_client_group }}
-         gid={{ groups[ansible_client_group]['gid'] }}
-         state=present
 
 - name: Add {{ ansible_client_user }} user
   user: >
         name={{ ansible_client_user }}
         uid={{users[ansible_client_user]['uid']}}
-        group={{ ansible_client_group }}
         home={{users[ansible_client_user]['home']}}
         state=present
 
@@ -33,3 +27,11 @@
               regexp="^{{ ansible_client_user }}\s+ALL=\(ALL\)\s+NOPASSWD:\s+ALL$"
               line="{{ ansible_client_user }} ALL=(ALL)      NOPASSWD: ALL"
               state=present
+
+- name: Install {{ ansible_client_user }} public key
+  authorized_key: >
+                  user={{ ansible_client_user }}
+                  key="{{ item }}"
+                  state=present
+  with_file:
+    - "{{users[ansible_client_user]['home']}}/.ssh/id_rsa.pub"

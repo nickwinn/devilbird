@@ -6,6 +6,7 @@
   pre_tasks:
 
   roles:
+   - role: users 
    - role: dns
    - role: base-linux
    - role: docker

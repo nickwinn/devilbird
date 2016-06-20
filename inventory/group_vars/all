@@ -17,8 +17,8 @@ ntpservers:
   - 1.pool.ntp.org
   - 2.pool.ntp.org
 
-ansible_client_user: root 
-ansible_client_group: root
+ansible_client_user: cfm 
+ansible_client_group: cfm 
 
 users:
     cfm:
@@ -26,6 +26,13 @@ users:
         group: cfm 
         home: /usr/local/cfm
         shell: /bin/bash
+        comment: ansible system account
 groups:
     cfm:
         gid: 1000
+
+required_groups:
+   - cfm
+
+requred_users:
+   - cfm

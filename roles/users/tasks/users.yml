@@ -1,18 +1,6 @@
 ---
 # users: Tasks entry point. Called by main.yml 
 
-###- name: adding cfm
-###  user:
-###    name: cfm
-###    home: /usr/local/cfm
-###    shell: /bin/bash
-###
-###- name: adding cfm key
-###  authorized_key:
-###    user: cfm
-###    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-###
-
 - name: Add {{ ansible_client_user }} user
   user: >
         name={{ ansible_client_user }}

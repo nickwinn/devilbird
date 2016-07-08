@@ -29,3 +29,7 @@ emby00.twistedliving.com
 
 [plex]
 plex00.twistedliving.com
+
+[artillery]
+artillery-internal.twistedliving.com
+artillery-external.twistedliving.com

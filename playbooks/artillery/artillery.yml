@@ -1,0 +1,11 @@
+- name: artillery playbook
+  hosts: artillery
+  gather_facts: yes
+  user: root
+  vars:
+  pre_tasks:
+
+  roles:
+   - role: users 
+   - role: dns
+   - role: base-linux

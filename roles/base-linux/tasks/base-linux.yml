@@ -13,6 +13,7 @@
      - less
      - nfs-utils
      - python-setuptools
+     - git
 
  - name: update all packages
    yum:

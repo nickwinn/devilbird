@@ -1,22 +1,22 @@
 - name: example playbook
-  hosts: docker 
+  hosts: jenkins 
   gather_facts: yes
   user: root
 
   pre_tasks:
-   - name: install packages
-     yum: 
-        name={{ item }}
-        state=present
-        update_cache=yes
-     with_items:
-       - vim
-       - mc
-       - net-tools
-       - less
-       - tmux
+#   - name: install packages
+#     yum: 
+#        name={{ item }}
+#        state=present
+#        update_cache=yes
+#     with_items:
+#       - vim
+#       - mc
+#       - net-tools
+#       - less
+#       - tmux
 
   roles:
-   - role: apache2
-   - role: docker
-   - role: base_linux
+   - role: dns
+   - role: base-linux
+   - role: users

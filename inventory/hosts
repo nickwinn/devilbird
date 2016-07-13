@@ -33,3 +33,7 @@ plex00.twistedliving.com
 [artillery]
 artillery-internal.twistedliving.com
 artillery-external.twistedliving.com
+
+[jenkins]
+jenkins-master00.twistedliving.com
+jenkins-slave00.twistedliving.com
